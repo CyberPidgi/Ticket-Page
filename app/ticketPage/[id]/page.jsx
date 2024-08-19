@@ -1,12 +1,10 @@
-"use client";
-
 import TicketForm from '@/app/(components)/TicketForm'
 import React from 'react'
 
 
 const getTicketById = async(id) => {
   
-  const res = await fetch(`/api/Tickets/${id}`, {
+  const res = await fetch(`${process.env.BASE_URL}/api/Tickets/${id}`, {
     cache: "no-store"
   })
 

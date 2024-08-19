@@ -1,10 +1,9 @@
-"use client";
-
 import TicketCard from "./(components)/TicketCard";
 
 const getTickets = async () => {
   try {
-    const res = await fetch("/api/Tickets", {cache: "no-store"});
+    console.log(`${process.env.BASE_URL}/api/Tickets`)
+    const res = await fetch(`${process.env.BASE_URL}/api/Tickets`, {cache: "no-store"});
 
     return res.json();
   } catch (error) {
@@ -24,7 +23,7 @@ export default async function Home() {
           uniqueCategories.map((uniqueCategory, categoryIndex) => (
             <div key={categoryIndex} className="mb-4">
               <h2>{uniqueCategory}</h2>
-              <div className="lg:grid grid-cols-2    xl:grid-cols-4">
+              <div className="lg:grid grid-cols-2 xl:grid-cols-4">
               {tickets.filter(
                 (ticket) => ticket.category === uniqueCategory
                 ).map((filteredTicket, _index) => (

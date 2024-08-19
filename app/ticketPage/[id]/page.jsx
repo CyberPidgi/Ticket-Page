@@ -1,3 +1,5 @@
+"use client";
+
 import TicketForm from '@/app/(components)/TicketForm'
 import React from 'react'
 

@@ -1,3 +1,5 @@
+"use client";
+
 import TicketCard from "./(components)/TicketCard";
 
 const getTickets = async () => {
